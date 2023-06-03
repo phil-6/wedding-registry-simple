@@ -15,7 +15,7 @@
 
   <div class="intro">
     <p>Thank you so much for showing interest in getting this item for us!</p>
-    <p>You can get this from <%= link_to URI::parse(@item.link).host, @item.link, class: "product-link" %></p>
+    <p>You can get this from <%= link_to URI::parse(@item.link).host, @item.link, class: "product-link", target: "_blank" %></p>
     <p>
       When you've ordered the item, please can you add your name and a message for us below. This will remove the item
       from the list so no-one else buys it too.
