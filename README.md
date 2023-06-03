@@ -1,24 +1,11 @@
-# README
+<div align="center">
+<img alt="P&S Logo" src="https://reynolds.day/assets/images/Colour_Phil_And_Shona.png" width="400" >
+</div>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# A Wedding Registry<br><sup> as simple as possible</sup>
 
-Things you may want to cover:
+This is a wedding gift list app done as simply as possible
+The couple can add items to the list and guest can mark them as bought.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+That's it. No more, no less.
+No bells, no faff, no nonsense. (And also not really any security, so don't use this for anything important!)
