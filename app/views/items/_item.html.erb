@@ -24,19 +24,16 @@
     <%= item.ref %>
   </p>
 
-  <p>
-    <strong>Bought:</strong>
-    <%= item.bought %>
-  </p>
+  <% if item.bought? %>
+    <p>
+      <strong>Bought by:</strong>
+      <%= item.bought_by %>
+    </p>
 
-  <p>
-    <strong>Bought by:</strong>
-    <%= item.bought_by %>
-  </p>
-
-  <p>
-    <strong>Bought message:</strong>
-    <%= item.bought_message %>
-  </p>
+    <p>
+      <strong>Bought message:</strong>
+      <%= item.bought_message %>
+    </p>
+  <% end %>
 
 </div>

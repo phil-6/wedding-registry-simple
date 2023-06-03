@@ -1,0 +1,28 @@
+<%= form_with(model: @item, url: buy_item_path(@item)) do |form| %>
+  <% if @item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% @item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>Buy Form</h1>
+  <div>
+    <%= form.label :bought_by, style: "display: block" %>
+    <%= form.text_field :bought_by %>
+  </div>
+
+  <div>
+    <%= form.label :bought_message, style: "display: block" %>
+    <%= form.text_field :bought_message %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

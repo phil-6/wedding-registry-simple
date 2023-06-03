@@ -6,9 +6,7 @@
   <% @items.each do |item| %>
     <%= render item %>
     <p>
-      <%= link_to "Show this item", item %>
+      <%= link_to "Buy this for Phil and Shona", buy_item_path(item) unless item.bought %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New item", new_item_path %>
