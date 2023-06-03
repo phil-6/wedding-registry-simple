@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="P&S Logo" src="https://reynolds.day/assets/images/Colour_Phil_And_Shona.png" width="400" >
+<img alt="P&S Logo" src="https://github.com/ryalto/ryalto-v4/assets/29845460/5797d39f-3433-4736-a20e-70a2762008a7" width="400" >
 </div>
 
 # A Wedding Registry<br><sup> as simple as possible</sup>
