@@ -44,7 +44,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    debugger
     if @item.update(buy_params.merge(bought: true))
       redirect_to items_url, notice: "Thank you so much!"
     else
