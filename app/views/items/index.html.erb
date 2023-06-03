@@ -1,12 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<div class="logo-container">
+  <a href="/">
+    <%= image_tag "Colour_Phil_And_Shona.png", class: "logo", alt: "Shona and Phil" %>
+  </a>
+</div>
 
-<h1>Items</h1>
+<h1><sub>Shona and Phil's<br></sub>Wedding Registry</h1>
+<p style="text-align: center;color: green"><%= notice %></p>
+<p class="main-intro">
+  Welcome! Thank you so much for finding your way here, and we're sorry this has taken us so long to sort out our wedding registry!
 
+</p>
 <div id="items">
   <% @items.each do |item| %>
-    <%= render item %>
-    <p>
-      <%= link_to "Buy this for Phil and Shona", buy_item_path(item) unless item.bought %>
-    </p>
+    <div class="item">
+      <%= render item %>
+      <div class="button-container">
+        <%= link_to "Buy this for Shona & Phil", buy_item_path(item), class: "buy-button" unless item.bought %>
+      </div>
+    </div>
   <% end %>
 </div>

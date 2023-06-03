@@ -11,32 +11,41 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="form-fields">
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
 
-  <div>
-    <%= form.label :link, style: "display: block" %>
-    <%= form.text_field :link %>
-  </div>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name, required: true %>
+    </div>
 
-  <div>
-    <%= form.label :value, style: "display: block" %>
-    <%= form.text_field :value %>
-  </div>
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description, required: true %>
+    </div>
 
-  <div>
-    <%= form.label :ref, style: "display: block" %>
-    <%= form.text_field :ref %>
-  </div>
+    <div>
+      <%= form.label :link %>
+      <%= form.text_field :link, required: true %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div>
+      <%= form.label :image_url %>
+      <%= form.text_field :image_url %>
+    </div>
+
+    <div>
+      <%= form.label :value %>
+      <%= form.text_field :value, required: true %>
+    </div>
+
+    <div>
+      <%= form.label :ref %>
+      <%= form.text_field :ref %>
+    </div>
+
+    <div class="button-container">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

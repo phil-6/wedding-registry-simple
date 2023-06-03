@@ -11,9 +11,14 @@ $heading-font: 'Allura', cursive;
 $body-font: 'Josefin Sans', sans-serif;
 
 $yellow: #f5ff43;
+$dark-yellow: #DAE600;
 $green: #50e176;
+$dark-green: #20BB49;
 $blue: #1FCAD6;
+$dark-blue: #189FA8;
 $black: #061224;
+$white-green: #E6FBEC;
+$white-grad: linear-gradient(to right, #FDFFD7, #DAF9E2, #CDF5F8);
 
 html {
   height: 100%;
@@ -22,19 +27,39 @@ html {
 }
 
 body {
-  height: 100%;
   margin: 0;
-  font-family: $body-font;
   background-color: $black;
   color: whitesmoke;
+  font-family: $body-font;
+  height: 100%;
   //background: linear-gradient(to bottom, #f5ff43, #50e176, #22d2df);
+  .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto auto;
+
+    img.logo {
+      aspect-ratio: auto;
+      width: 10rem;
+    }
+  }
 
   h1, h2 {
-    font-family: $heading-font;
-    text-align: center;
     background: linear-gradient(to right, $yellow, $green 35%, $blue);
+    font-family: $heading-font;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    width: fit-content;
+
+    &.dark {
+      background: linear-gradient(to right, $dark-yellow, $dark-green 35%, $dark-blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   h1 {
@@ -42,6 +67,11 @@ body {
     @media (max-width: $breakpoint-sm) {
       font-size: 2rem;
     }
+  }
+
+  p {
+    font-size: 1.2rem;
+    text-align: center;
   }
 
   a {
@@ -80,10 +110,138 @@ body {
         }
       }
     }
+
+    &.product-link {
+      color: $dark-blue;
+
+      &:hover {
+        color: $dark-green;
+      }
+    }
   }
 
   .hidden {
     display: none !important;
   }
 
+  #items { // Index Page
+    .main-intro {
+      text-align: center;
+      margin: 2rem 0;
+      width: 90%;
+
+    }
+
+    .item {
+      background: $white-grad;
+      border-radius: 1rem;
+      color: $black;
+      margin: 1rem;
+      padding: 1rem;
+
+      h2 {
+        font-size: 2rem;
+        margin: 0 auto;
+      }
+
+      .image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+          max-width: 80%;
+          border-radius: 20rem;
+          max-height: 15rem;
+        }
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .buy-button {
+          border-radius: 0.6rem;
+          background-color: $black;
+          cursor: pointer;
+          color: $white-green;
+          padding: 0.6rem;
+          text-align: center;
+
+          @media (max-width: $breakpoint-sm) {
+            box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
+            transition: all 0.5s;
+          }
+
+          &:focus-visible {
+            box-shadow: 0 0 20px -5px $yellow;
+            outline: none;
+            transition: all 0.5s;
+          }
+
+          &:hover {
+            box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    background: $white-grad;
+    border-radius: 0.6rem;
+    padding: 2rem;
+    margin: 2rem;
+
+    .form-fields {
+      width: 30rem;
+    }
+
+    div {
+      margin: 0.5rem auto;
+      text-align: center;
+
+      &.intro {
+        color: $black;
+        font-size: 1.5rem;
+      }
+
+      label {
+        color: $black;
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+
+      input, textarea {
+        border: none;
+        border-radius: 0.6rem;
+        padding: 1rem 0;
+        text-align: center;
+        width: 100%;
+      }
+
+      &.button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        input[type="submit"] {
+          background: $black;
+          color: $white-green;
+          font-size: 2rem;
+          font-family: $heading-font;
+          padding: 0.6rem;
+          width: fit-content;
+
+          &:hover {
+            box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
 }

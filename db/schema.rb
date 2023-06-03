@@ -18,9 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_092247) do
     t.string "name"
     t.text "description"
     t.string "link"
+    t.string "image_url"
     t.decimal "value"
     t.string "ref"
-    t.boolean "bought"
+    t.boolean "bought", default: false
     t.string "bought_by"
     t.string "bought_message"
     t.datetime "created_at", null: false

@@ -1,14 +1,15 @@
 class CreateItems < ActiveRecord::Migration[7.0]
   def change
     create_table :items do |t|
-      t.string :name
-      t.text :description
-      t.string :link
-      t.decimal :value
+      t.string :name, null: false
+      t.text :description, null: false
+      t.string :link, null: false
+      t.string :image_url
+      t.decimal :value, null: false
       t.string :ref
-      t.boolean :bought
+      t.boolean :bought, default: false
       t.string :bought_by
-      t.string :bought_message
+      t.text :bought_message
 
       t.timestamps
     end

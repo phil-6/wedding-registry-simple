@@ -11,18 +11,31 @@
     </div>
   <% end %>
 
-  <h1>Buy Form</h1>
-  <div>
-    <%= form.label :bought_by, style: "display: block" %>
-    <%= form.text_field :bought_by %>
+  <h1 class="dark">Buy <%= @item.name.titleize %></h1>
+
+  <div class="intro">
+    <p>Thank you so much for showing interest in getting this item for us!</p>
+    <p>You can get this from <%= link_to URI::parse(@item.link).host, @item.link, class: "product-link" %></p>
+    <p>
+      When you've ordered the item, please can you add your name and a message for us below. This will remove the item
+      from the list so no-one else buys it too.
+    </p>
+    <p>We really appreciate everything and are looking forward to seeing you soon!</p>
   </div>
 
-  <div>
-    <%= form.label :bought_message, style: "display: block" %>
-    <%= form.text_field :bought_message %>
-  </div>
+  <div class="form-fields">
+    <div>
+      <%= form.label :bought_by, "Your Name(s)" %>
+      <%= form.text_field :bought_by, required: true %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div>
+      <%= form.label :bought_message, "Message for Shona and Phil" %>
+      <%= form.text_area :bought_message, required: true %>
+    </div>
+
+    <div class="button-container">
+      <%= form.submit "I Bought This!" %>
+    </div>
   </div>
 <% end %>
