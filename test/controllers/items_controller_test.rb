@@ -17,7 +17,7 @@ class GiftsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create gift" do
     assert_difference("Gift.count") do
-      post gifts_url, params: { gift: { bought: @gift.bought, bought_by: @gift.bought_by, bought_message: @gift.bought_message, description: @gift.description, link: @gift.link, name: @gift.name, ref: @gift.ref, value: @gift.value } }
+      post gifts_url, params: { gift: { bought: @gift.bought, bought_by: @gift.bought_by, bought_message: @gift.bought_message, description: @gift.description, link: @gift.link, name: @gift.name, ref: @gift.ref, cost: @gift.cost } }
     end
 
     assert_redirected_to gift_url(Gift.last)
@@ -34,7 +34,7 @@ class GiftsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update gift" do
-    patch gift_url(@gift), params: { gift: { bought: @gift.bought, bought_by: @gift.bought_by, bought_message: @gift.bought_message, description: @gift.description, link: @gift.link, name: @gift.name, ref: @gift.ref, value: @gift.value } }
+    patch gift_url(@gift), params: { gift: { bought: @gift.bought, bought_by: @gift.bought_by, bought_message: @gift.bought_message, description: @gift.description, link: @gift.link, name: @gift.name, ref: @gift.ref, cost: @gift.cost } }
     assert_redirected_to gift_url(@gift)
   end
 

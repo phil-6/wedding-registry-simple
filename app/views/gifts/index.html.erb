@@ -16,7 +16,7 @@
     <div class="gift">
       <%= render gift %>
       <div class="button-container">
-        <%= link_to "Buy this for Shona & Phil", buy_gift_path(gift), class: "buy-button" unless gift.bought %>
+        <%= link_to "Buy this for Shona & Phil", new_gift_gifter_path(gift), class: "buy-button" unless gift.bought %>
       </div>
     </div>
   <% end %>

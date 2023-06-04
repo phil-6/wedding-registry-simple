@@ -13,7 +13,6 @@
 
   <div class="form-fields">
 
-
     <div>
       <%= form.label :name %>
       <%= form.text_field :name, required: true %>
@@ -35,8 +34,19 @@
     </div>
 
     <div>
-      <%= form.label :value %>
-      <%= form.text_field :value, required: true %>
+      <%= form.label :cost %>
+      <%= form.text_field :cost, required: true %>
+    </div>
+
+    <div>
+      <p>Splittable gifts are ones that are too big for one person to afford, or ones that you want
+        to be able to buy yourself. The link should be a 'Settle Up' link or similar to allow a person to securely send
+        you their contribution.</p>
+      <% splittable_label = "Check this box to make this item Splittable" %>
+      <div class="checkbox">
+        <%= form.label :splittable, splittable_label %>
+        <%= form.check_box :splittable %>
+      </div>
     </div>
 
     <div>

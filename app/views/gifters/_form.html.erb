@@ -1,0 +1,41 @@
+<%= form_with(model: [@gift, gifter]) do |form| %>
+  <% if gifter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(gifter.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% gifter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-fields">
+    <div>
+      <%= form.label :name, "Your Name(s)" %>
+      <%= form.text_field :name, required: true %>
+    </div>
+
+    <div>
+      <%= form.label :email, "Best contact email" %>
+      <%= form.email_field :email %>
+    </div>
+
+    <div>
+      <%= form.label :message, "Message for Shona and Phil" %>
+      <%= form.text_area :message, required: true %>
+    </div>
+
+    <% if @gift.splittable %>
+      <div>
+        <%= form.label :contribution, "How much are you contributing towards #{@gift.name}?" %>
+        <%= form.text_field :contribution, required: true %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="button-container">
+    <%= form.submit "I Bought This!" %>
+  </div>
+<% end %>

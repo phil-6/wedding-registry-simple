@@ -5,13 +5,10 @@ class CreateGifts < ActiveRecord::Migration[7.0]
       t.text :description, null: false
       t.string :link, null: false
       t.string :image_url
-      t.decimal :value, null: false
+      t.decimal :cost, null: false
       t.string :ref
-      t.boolean :monetary, default: false
       t.boolean :splittable, default: false
       t.boolean :bought, default: false
-      t.string :bought_by
-      t.text :bought_message
 
       t.timestamps
     end

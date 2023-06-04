@@ -1,0 +1,15 @@
+<h1>Bought Gifts</h1>
+
+<div id="gifts">
+  <% @gifts.each do |gift| %>
+    <div class="gift">
+      <%= render gift %>
+      <div id="gifters">
+        <h3><%= gift.gifters.size if gift.splittable %> Gifters</h3>
+        <% gift.gifters.each do |gifter| %>
+          <%= render gifter %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

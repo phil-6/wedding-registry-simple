@@ -1,0 +1,30 @@
+<h1 class="dark">Buy <%= @gift.name.titleize %></h1>
+
+<div class="intro">
+  <p><%= @gift.description %></p>
+
+  <% if @gift.splittable %>
+    <p>Thank you so much for showing interest in contributing to this gift for us!</p>
+    <p>
+      You can contribute to this by using this link <%= link_to URI::parse(@gift.link).host, @gift.link,
+                                        class: "product-link", target: "_blank" %>
+    </p>
+    <p>
+      When you've contributed, please can you add your name and a message for us below. This will update the total on the
+      gift list.
+    </p>
+  <% else %>
+    <p>Thank you so much for showing interest in getting this gift for us!</p>
+    <p>
+      You can get this from <%= link_to URI::parse(@gift.link).host, @gift.link,
+                                        class: "product-link", target: "_blank" %>
+    </p>
+    <p>
+      When you've ordered the gift, please can you add your name and a message for us below. This will remove the gift
+      from the list so no-one else buys it too.
+    </p>
+  <% end %>
+  <p>We really appreciate everything and are looking forward to seeing you soon!</p>
+</div>
+
+<%= render "form", gifter: @gifter %>

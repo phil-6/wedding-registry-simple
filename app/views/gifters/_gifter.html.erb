@@ -1,0 +1,23 @@
+<div id="<%= dom_id gifter %>" class="gifter">
+  <p>
+    <strong>Name:</strong>
+    <%= gifter.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= gifter.email %>
+  </p>
+
+  <p>
+    <strong>Message:</strong>
+    <%= gifter.message %>
+  </p>
+
+  <% if gifter.gift.splittable %>
+    <p>
+      <strong>Contribution:</strong>
+      <%= number_to_currency(gifter.contribution, unit: "£") %>
+    </p>
+  <% end %>
+</div>

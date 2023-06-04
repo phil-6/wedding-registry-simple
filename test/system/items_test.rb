@@ -21,7 +21,7 @@ class GiftsTest < ApplicationSystemTestCase
     fill_in "Link", with: @gift.link
     fill_in "Name", with: @gift.name
     fill_in "Ref", with: @gift.ref
-    fill_in "Value", with: @gift.value
+    fill_in "Cost", with: @gift.cost
     click_on "Create Gift"
 
     assert_text "Gift was successfully created"
@@ -39,7 +39,7 @@ class GiftsTest < ApplicationSystemTestCase
     fill_in "Link", with: @gift.link
     fill_in "Name", with: @gift.name
     fill_in "Ref", with: @gift.ref
-    fill_in "Value", with: @gift.value
+    fill_in "Cost", with: @gift.cost
     click_on "Update Gift"
 
     assert_text "Gift was successfully updated"

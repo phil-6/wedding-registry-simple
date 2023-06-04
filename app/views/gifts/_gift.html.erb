@@ -1,6 +1,6 @@
 <div id="<%= dom_id gift %>">
 
-  <h2 class="dark"><%= gift.name %></h2>
+  <h1 class="dark"><%= gift.name %></h1>
   <p class="description"><%= gift.description %></p>
 
   <% if gift.image_url.present? %>
@@ -11,18 +11,19 @@
 
   <p>
     <strong>Cost:</strong>
-    <%= number_to_currency(gift.value, unit: "£") %>
+    <%= number_to_currency(gift.cost, unit: "£") %>
   </p>
 
-  <% if gift.bought? %>
+  <% if gift.splittable %>
+    <% gift_progress = gift.progress_percentage %>
+    <div class="progress-bar">
+        <span class="progress-bar-fill" style="width: <%= gift_progress %>%;">
+          <span><%= gift_progress %>% contributed</span>
+        </span>
+    </div>
     <p>
-      <strong>Bought by:</strong>
-      <%= gift.bought_by %>
-    </p>
-
-    <p>
-      <strong>Bought message:</strong>
-      <%= gift.bought_message %>
+      <strong>Remaining:</strong>
+      <%= number_to_currency(gift.remaining_cost, unit: "£") %>
     </p>
   <% end %>
 
