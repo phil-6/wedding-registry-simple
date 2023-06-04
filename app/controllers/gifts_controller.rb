@@ -24,7 +24,7 @@ class GiftsController < ApplicationController
     @gift = Gift.new(gift_params)
 
     if @gift.save
-      redirect_to root_path, notice: "Gift was successfully created."
+      redirect_to root_path, notice: "Gift was successfully created. <a href='#{new_gift_path}'>Add Another</a>"
     else
       render :new, status: :unprocessable_entity, alert: "Gift was not created. Something went wrong."
     end

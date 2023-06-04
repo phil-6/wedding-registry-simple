@@ -5,7 +5,7 @@
 </div>
 
 <h1><sub>Shona and Phil's<br></sub>Wedding Registry</h1>
-<p style="text-align: center;color: green"><%= notice %></p>
+<p style="text-align: center;color: green"><%= notice&.html_safe %></p>
 <p class="main-intro">
   Welcome! Thank you so much for finding your way here, and we're sorry this has taken us so long to sort out our
   wedding registry!
@@ -24,4 +24,6 @@
 
 <div class="footer">
   <p>If you have any suggestions on how I can make this better, please let me know! <br> -Phil</p>
+
+  <p class="invisible"><%= link_to "Add a Gift", new_gift_path %></p>
 </div>

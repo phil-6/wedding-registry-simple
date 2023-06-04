@@ -75,6 +75,18 @@ body {
     font-size: 1.2rem;
     text-align: center;
 
+    &.invisible {
+      text-align: right;
+
+      a {
+        color: $black;
+
+        &:hover {
+          color: $dark-blue;
+          transition: all 2s;
+        }
+      }
+    }
   }
 
   a {
@@ -213,6 +225,7 @@ body {
           white-space: nowrap;
         }
       }
+
       #gifters {
         .gifter {
           border: 1px solid $green;
