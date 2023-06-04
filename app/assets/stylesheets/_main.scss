@@ -209,7 +209,8 @@ body {
 
         span {
           margin: 0 1rem;
-          overflow: clip;
+          overflow: hidden;
+          white-space: nowrap;
         }
       }
       #gifters {
@@ -283,6 +284,14 @@ body {
             transition: all 0.5s;
           }
         }
+      }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      margin: 0;
+
+      .form-fields {
+        width: 100%;
       }
     }
   }
