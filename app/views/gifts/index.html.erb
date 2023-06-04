@@ -7,9 +7,21 @@
 <h1><sub>Shona and Phil's<br></sub>Wedding Registry</h1>
 <p style="text-align: center;color: green"><%= notice&.html_safe %></p>
 <p class="main-intro">
-  Welcome! Thank you so much for finding your way here, and we're sorry this has taken us so long to sort out our
+  Welcome! Thank you so much for finding your way here, and we're sorry that it has taken us so long to sort out our
   wedding registry!
-
+</p>
+<p class="main-intro">
+  Your presence is truly the most cherished gift we could receive, we understand that some of you may still wish to
+  honor us with a tangible token of your love and support. With that in mind, we have created a wedding registry to
+  provide you with some ideas and options, should you choose to contribute in this way.
+  We have tried to include a range of items at different price points, and we have also included some options for
+  donations to bigger projects and adventures we have planned.
+</p>
+<p class="main-intro">
+  We're going to be adding more items to the registry over the next few weeks, so please check back in if you don't see
+  anything that feels right to you.
+  <br>
+  We are so grateful for your love and support, and we can't wait to celebrate with you!
 </p>
 <div id="gifts">
   <% @gifts.each do |gift| %>
@@ -26,4 +38,6 @@
   <p>If you have any suggestions on how I can make this better, please let me know! <br> -Phil</p>
 
   <p class="invisible"><%= link_to "Add a Gift", new_gift_path %></p>
+  <p class="invisible"><%= link_to "Bought Gifts", bought_gifts_gifts_path %></p>
+
 </div>
