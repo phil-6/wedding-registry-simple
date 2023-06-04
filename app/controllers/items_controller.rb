@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.unbought.order(cost: :desc)
+    @items = Item.unbought.order(cost: :asc)
   end
 
   def bought_items
