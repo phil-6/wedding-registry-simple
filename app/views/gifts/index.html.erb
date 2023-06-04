@@ -11,12 +11,12 @@
   wedding registry!
 
 </p>
-<div id="items">
-  <% @items.each do |item| %>
-    <div class="item">
-      <%= render item %>
+<div id="gifts">
+  <% @gifts.each do |gift| %>
+    <div class="gift">
+      <%= render gift %>
       <div class="button-container">
-        <%= link_to "Buy this for Shona & Phil", buy_item_path(item), class: "buy-button" unless item.bought %>
+        <%= link_to "Buy this for Shona & Phil", buy_gift_path(gift), class: "buy-button" unless gift.bought %>
       </div>
     </div>
   <% end %>

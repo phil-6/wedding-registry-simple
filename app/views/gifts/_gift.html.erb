@@ -1,0 +1,29 @@
+<div id="<%= dom_id gift %>">
+
+  <h2 class="dark"><%= gift.name %></h2>
+  <p class="description"><%= gift.description %></p>
+
+  <% if gift.image_url.present? %>
+    <div class="image">
+      <%= image_tag gift.image_url %>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>Cost:</strong>
+    <%= number_to_currency(gift.value, unit: "£") %>
+  </p>
+
+  <% if gift.bought? %>
+    <p>
+      <strong>Bought by:</strong>
+      <%= gift.bought_by %>
+    </p>
+
+    <p>
+      <strong>Bought message:</strong>
+      <%= gift.bought_message %>
+    </p>
+  <% end %>
+
+</div>

@@ -1,12 +1,14 @@
-class CreateItems < ActiveRecord::Migration[7.0]
+class CreateGifts < ActiveRecord::Migration[7.0]
   def change
-    create_table :items do |t|
+    create_table :gifts do |t|
       t.string :name, null: false
       t.text :description, null: false
       t.string :link, null: false
       t.string :image_url
       t.decimal :value, null: false
       t.string :ref
+      t.boolean :monetary, default: false
+      t.boolean :splittable, default: false
       t.boolean :bought, default: false
       t.string :bought_by
       t.text :bought_message

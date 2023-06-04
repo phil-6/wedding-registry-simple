@@ -1,48 +1,48 @@
 require "test_helper"
 
-class ItemsControllerTest < ActionDispatch::IntegrationTest
+class GiftsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @item = items(:one)
+    @gift = gifts(:one)
   end
 
   test "should get index" do
-    get items_url
+    get gifts_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_item_url
+    get new_gift_url
     assert_response :success
   end
 
-  test "should create item" do
-    assert_difference("Item.count") do
-      post items_url, params: { item: { bought: @item.bought, bought_by: @item.bought_by, bought_message: @item.bought_message, description: @item.description, link: @item.link, name: @item.name, ref: @item.ref, value: @item.value } }
+  test "should create gift" do
+    assert_difference("Gift.count") do
+      post gifts_url, params: { gift: { bought: @gift.bought, bought_by: @gift.bought_by, bought_message: @gift.bought_message, description: @gift.description, link: @gift.link, name: @gift.name, ref: @gift.ref, value: @gift.value } }
     end
 
-    assert_redirected_to item_url(Item.last)
+    assert_redirected_to gift_url(Gift.last)
   end
 
-  test "should show item" do
-    get item_url(@item)
+  test "should show gift" do
+    get gift_url(@gift)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_item_url(@item)
+    get edit_gift_url(@gift)
     assert_response :success
   end
 
-  test "should update item" do
-    patch item_url(@item), params: { item: { bought: @item.bought, bought_by: @item.bought_by, bought_message: @item.bought_message, description: @item.description, link: @item.link, name: @item.name, ref: @item.ref, value: @item.value } }
-    assert_redirected_to item_url(@item)
+  test "should update gift" do
+    patch gift_url(@gift), params: { gift: { bought: @gift.bought, bought_by: @gift.bought_by, bought_message: @gift.bought_message, description: @gift.description, link: @gift.link, name: @gift.name, ref: @gift.ref, value: @gift.value } }
+    assert_redirected_to gift_url(@gift)
   end
 
-  test "should destroy item" do
-    assert_difference("Item.count", -1) do
-      delete item_url(@item)
+  test "should destroy gift" do
+    assert_difference("Gift.count", -1) do
+      delete gift_url(@gift)
     end
 
-    assert_redirected_to items_url
+    assert_redirected_to gifts_url
   end
 end
