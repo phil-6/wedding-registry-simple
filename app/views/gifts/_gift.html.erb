@@ -1,7 +1,7 @@
 <div id="<%= dom_id gift %>">
 
   <h1 class="dark"><%= gift.name %></h1>
-  <p class="description"><%= gift.description %></p>
+  <p class="description"><%= simple_format(gift.description) %></p>
 
   <% if gift.image_url.present? %>
     <div class="image">
