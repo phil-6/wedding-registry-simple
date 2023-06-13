@@ -35,277 +35,288 @@ body {
   font-family: $body-font;
   height: 100%;
   //background: linear-gradient(to bottom, #f5ff43, #50e176, #22d2df);
-  .logo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 1rem auto auto;
+  main {
+    max-width: 64rem;
+    margin: auto;
 
-    img.logo {
-      aspect-ratio: auto;
-      width: 10rem;
+    .logo-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 1rem auto auto;
+
+      img.logo {
+        aspect-ratio: auto;
+        width: 10rem;
+      }
     }
-  }
 
-  h1, h2 {
-    background: $main-grad;
-    font-family: $heading-font;
-    margin: 0 auto;
-    padding: 0 1rem;
-    text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    width: fit-content;
-
-    &.dark {
-      background: $dark-grad;
+    h1, h2 {
+      background: $main-grad;
+      font-family: $heading-font;
+      margin: 0 auto;
+      padding: 0 1rem;
+      text-align: center;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      width: fit-content;
+
+      &.dark {
+        background: $dark-grad;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
-  }
 
-  h1 {
-    font-size: 4rem;
-    @media (max-width: $breakpoint-sm) {
-      font-size: 2rem;
+    h1 {
+      font-size: 4rem;
+      @media (max-width: $breakpoint-sm) {
+        font-size: 2rem;
+      }
     }
-  }
 
-  p {
-    font-size: 1.2rem;
-    text-align: center;
+    p {
+      font-size: 1.2rem;
+      text-align: center;
 
-    &.invisible {
-      text-align: right;
+      &.invisible {
+        text-align: right;
 
-      a {
-        color: $black;
+        a {
+          color: $black;
+
+          &:hover {
+            color: $dark-blue;
+            transition: all 2s;
+          }
+        }
+      }
+
+      &.main-intro {
+        text-align: center;
+        margin: 2rem auto;
+        width: 90%;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &.inline-link {
+        font-family: $heading-font;
+        font-size: 1.4rem;
+        line-height: 0.8rem;
+        background: $main-grad;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glow 6s ease-in-out infinite normal;
+        animation-delay: 2s;
+        @keyframes glow {
+          from {
+            text-shadow: none;
+          }
+          12.5% {
+            text-shadow: 0 0 10px $yellow;
+          }
+          25% {
+            text-shadow: none;
+          }
+          37.5% {
+            text-shadow: 0 0 10px $green;
+          }
+          50% {
+            text-shadow: none;
+          }
+          62.5% {
+            text-shadow: 0 0 10px $blue;
+          }
+          to {
+            text-shadow: none;
+          }
+        }
+      }
+
+      &.product-link {
+        color: $dark-blue;
 
         &:hover {
-          color: $dark-blue;
-          transition: all 2s;
-        }
-      }
-    }
-  }
-
-  a {
-    text-decoration: none;
-
-    &.inline-link {
-      font-family: $heading-font;
-      font-size: 1.4rem;
-      line-height: 0.8rem;
-      background: $main-grad;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 6s ease-in-out infinite normal;
-      animation-delay: 2s;
-      @keyframes glow {
-        from {
-          text-shadow: none;
-        }
-        12.5% {
-          text-shadow: 0 0 10px $yellow;
-        }
-        25% {
-          text-shadow: none;
-        }
-        37.5% {
-          text-shadow: 0 0 10px $green;
-        }
-        50% {
-          text-shadow: none;
-        }
-        62.5% {
-          text-shadow: 0 0 10px $blue;
-        }
-        to {
-          text-shadow: none;
+          color: $dark-green;
         }
       }
     }
 
-    &.product-link {
-      color: $dark-blue;
-
-      &:hover {
-        color: $dark-green;
-      }
-    }
-  }
-
-  .hidden {
-    display: none !important;
-  }
-
-  #gifts { // Index Page
-    .main-intro {
-      text-align: center;
-      margin: 2rem 0;
-      width: 90%;
-
+    .hidden {
+      display: none !important;
     }
 
-    .gift {
-      background: $white-grad;
-      border-radius: 1rem;
-      color: $black;
-      margin: 1rem;
-      padding: 1rem;
+    #gifts { // Index Page
 
-      h2 {
-        font-size: 2rem;
-        margin: 0 auto;
-      }
 
-      .image {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        img {
-          max-width: 80%;
-          border-radius: 20rem;
-          max-height: 15rem;
-        }
-      }
-
-      .button-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-
-        .buy-button {
-          border-radius: 0.6rem;
-          background-color: $black;
-          cursor: pointer;
-          color: $white-green;
-          padding: 0.6rem;
-          text-align: center;
-
-          @media (max-width: $breakpoint-sm) {
-            box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
-            transition: all 0.5s;
-          }
-
-          &:focus-visible {
-            box-shadow: 0 0 20px -5px $yellow;
-            outline: none;
-            transition: all 0.5s;
-          }
-
-          &:hover {
-            box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
-            transition: all 0.5s;
-          }
-        }
-      }
-
-      .progress-bar {
-        width: 100%;
-        background: $white-green;
-        padding: 3px;
-        border-radius: 3px;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
-      }
-
-      .progress-bar-fill {
-        align-items: center;
-        background: $blue;
-        border-radius: 3px;
-        display: flex;
-        height: 22px;
-        justify-content: right;
-        transition: width 500ms ease-in-out;
-
-        span {
-          margin: 0 1rem;
-          overflow: hidden;
-          white-space: nowrap;
-        }
-      }
-
-      #gifters {
-        .gifter {
-          border: 1px solid $green;
-          border-radius: 1rem;
-        }
-      }
-    }
-  }
-
-  form {
-    background: $white-grad;
-    border-radius: 0.6rem;
-    color: $black;
-    padding: 2rem;
-    margin: 2rem;
-
-    .form-fields {
-      width: 30rem;
-    }
-
-    div {
-      margin: 0.5rem auto;
-      text-align: center;
-
-      &.intro {
-        font-size: 1.5rem;
-      }
-
-      label {
+      .gift {
+        background: $white-grad;
+        border-radius: 1rem;
         color: $black;
-        display: block;
-        text-align: center;
-        width: 100%;
-      }
+        margin: 1rem;
+        padding: 1rem;
 
-      input, textarea {
-        border: none;
-        border-radius: 0.6rem;
-        padding: 1rem 0;
-        text-align: center;
-        width: 100%;
-      }
-
-      .checkbox {
-        display: flex;
-        align-items: center;
-
-        input {
-          height: 2rem;
-          width: 2rem;
-        }
-      }
-
-      &.button-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-
-        input[type="submit"] {
-          background: $black;
-          color: $white-green;
+        h2 {
           font-size: 2rem;
-          font-family: $heading-font;
-          padding: 0.6rem;
-          width: fit-content;
+          margin: 0 auto;
+        }
 
-          &:hover {
-            box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
-            transition: all 0.5s;
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          img {
+            max-width: 80%;
+            border-radius: 20rem;
+            max-height: 15rem;
+          }
+        }
+
+        .button-container {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          .buy-button {
+            border-radius: 0.6rem;
+            background-color: $black;
+            cursor: pointer;
+            color: $white-green;
+            padding: 0.6rem;
+            text-align: center;
+
+            @media (max-width: $breakpoint-sm) {
+              box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
+              transition: all 0.5s;
+            }
+
+            &:focus-visible {
+              box-shadow: 0 0 20px -5px $yellow;
+              outline: none;
+              transition: all 0.5s;
+            }
+
+            &:hover {
+              box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
+              transition: all 0.5s;
+            }
+          }
+        }
+
+        .progress-bar {
+          width: 100%;
+          background: $white-green;
+          padding: 3px;
+          border-radius: 3px;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+        }
+
+        .progress-bar-fill {
+          align-items: center;
+          background: $blue;
+          border-radius: 3px;
+          display: flex;
+          height: 22px;
+          justify-content: right;
+          transition: width 500ms ease-in-out;
+
+          span {
+            margin: 0 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+        }
+
+        #gifters {
+          .gifter {
+            border: 1px solid $green;
+            border-radius: 1rem;
           }
         }
       }
     }
 
-    @media (max-width: $breakpoint-sm) {
-      margin: 0;
+    form {
+      background: $white-grad;
+      border-radius: 0.6rem;
+      color: $black;
+      padding: 2rem;
+      margin: 2rem;
 
       .form-fields {
-        width: 100%;
+        width: 30rem;
       }
+
+      div {
+        margin: 0.5rem auto;
+        text-align: center;
+
+        &.intro {
+          font-size: 1.5rem;
+        }
+
+        label {
+          color: $black;
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+
+        input, textarea {
+          border: none;
+          border-radius: 0.6rem;
+          padding: 1rem 0;
+          text-align: center;
+          width: 100%;
+        }
+
+        .checkbox {
+          display: flex;
+          align-items: center;
+
+          input {
+            height: 2rem;
+            width: 2rem;
+          }
+        }
+
+        &.button-container {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          input[type="submit"] {
+            background: $black;
+            color: $white-green;
+            font-size: 2rem;
+            font-family: $heading-font;
+            padding: 0.6rem;
+            width: fit-content;
+
+            &:hover {
+              box-shadow: -20px 0 30px $yellow, 0 0 30px $green, 20px 0 30px $blue;
+              transition: all 0.5s;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        margin: 0;
+
+        .form-fields {
+          width: 100%;
+        }
+      }
+    }
+
+    footer {
+      margin: auto;
+      width: 80%;
     }
   }
 }

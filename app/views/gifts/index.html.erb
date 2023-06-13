@@ -18,7 +18,8 @@
   donations to bigger projects and adventures we have planned.
 </p>
 <p class="main-intro">
-  We're going to be adding more items to the registry over the next few weeks, so please check back in if you don't see
+  We're going to be adding more items to the registry over the next few weeks, so please check back in if you don't
+  see
   anything that feels right to you.
   <br>
   We are so grateful for your love and support, and we can't wait to celebrate with you!
@@ -28,16 +29,15 @@
     <div class="gift">
       <%= render gift %>
       <div class="button-container">
-        <%= link_to "Buy this for Shona & Phil", new_gift_gifter_path(gift), class: "buy-button" unless gift.bought %>
+        <%= link_to "More about this Gift", new_gift_gifter_path(gift), class: "buy-button" unless gift.bought %>
       </div>
     </div>
   <% end %>
 </div>
 
-<div class="footer">
+<footer>
   <p>If you have any suggestions on how I can make this better, please let me know! <br> -Phil</p>
 
   <p class="invisible"><%= link_to "Add a Gift", new_gift_path %></p>
   <p class="invisible"><%= link_to "Bought Gifts", bought_gifts_gifts_path %></p>
-
-</div>
+</footer>
